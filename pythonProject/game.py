@@ -1,6 +1,7 @@
 import pygame
 from pygame import mixer
 import math
+import random
 
 #pygame setup
 pygame.init()
@@ -63,7 +64,6 @@ class Car(pygame.sprite.Sprite):
         screen.blit(self.image , (self.x,self.y))
 
 
-
 #sprite group
 sprites = pygame.sprite.Group()
 #car object
@@ -71,6 +71,7 @@ car = Car()
 #add car to sprite group
 sprites.add(car)
 sprites.draw(screen)
+
 #create ground and sides
 ground_rect = pygame.Rect(-10 ,0, 10, screen.get_height())
 crash = False
@@ -111,6 +112,7 @@ while running:
     else:
         car.update()
         crash = False
+
 
     #poll for events
     #pygame.QUIT event when the user clicks x to close the window
